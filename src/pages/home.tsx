@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
-import { posts } from "../posts.data";
+import { movies } from "../posts.data";
 
 export type MovieItem = {
   id?: number;
@@ -15,9 +15,10 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleMoreDetails = (id: number) => {
-    console.log(id);
-    navigate(`/details/${id.toString()}`);
+    console.log(`Routing to details page with id ${id}`);
+    navigate(`/details/${id}`);
   };
+
   return (
     <>
       <Navbar />
@@ -29,7 +30,7 @@ const Home = () => {
           gap: 10,
         }}
       >
-        {posts.map((movie) => (
+        {movies.map((movie) => (
           <div key={movie.id} style={{ border: "1px solid black", padding: 5 }}>
             <img
               src={movie.image}

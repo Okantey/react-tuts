@@ -1,4 +1,4 @@
-const posts = [
+const movies = [
   {
     id: 1,
     title: "The lion king",
@@ -33,4 +33,4 @@ const posts = [
   },
 ];
 
-export { posts };
+export { movies };
