@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
 import { movies } from "../posts.data";
+import { Link } from "react-router-dom";
 
 export type MovieItem = {
   id?: number;
@@ -44,9 +45,7 @@ const Home = () => {
             />
             <h1 style={{ fontSize: 15 }}>{movie.title}</h1>
             <p>{movie.description}</p>
-            <button onClick={() => handleMoreDetails(movie.id)}>
-              View More
-            </button>
+            <Link to={`/details/${movie.id}`}>View More</Link>
           </div>
         ))}
       </div>
