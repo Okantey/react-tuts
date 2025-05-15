@@ -3,9 +3,18 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#fcfcfc",
+        secondary: "#183B4E",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }

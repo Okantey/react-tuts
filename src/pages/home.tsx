@@ -67,7 +67,8 @@ const Home = () => {
           +
         </span>
         <h1
-          className="my-10"
+          className="my-10 text-secondary font-poppins
+          "
           style={{ color: theme === "dark" ? "white" : "black" }}
         >
           You have selected {count} items to add to cart
