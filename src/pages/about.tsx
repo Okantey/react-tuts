@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/navbar";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 type PostData = {
   userId: number;
@@ -13,6 +15,11 @@ const About = () => {
   const [posts, setPosts] = useState<PostData[]>([]);
   // state to keep track of whether the posts is loading or not
   const [isLoading, setIsLoading] = useState(false);
+  // we access the theme context by passing it to the useContext hook
+  const theme = useContext(ThemeContext);
+  // assess properties of the theme context using theme and the dot operator since its an object
+
+  // eg. theme.logout, theme.isAuthenticated, theme.theme etc
 
   // this function handles the api request to the public api to get a lists of posts
   const handlePostFetching = async () => {
@@ -56,6 +63,7 @@ const About = () => {
           ))
         )}
       </div>
+      <button onClick={() => theme?.logout()}>Logout</button>
     </>
   );
 };
